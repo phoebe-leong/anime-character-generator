@@ -21,7 +21,8 @@ int main () {
     std::string girlName[] = {"Alex", "Sakura", "Phoebe", "Maple", "Arirata", "Kiki"};
     std::string hairColour[] = {"Brown", "Black", "Blonde", "Red", "Blue"};
     std::string occupation[] = {"Student", "Fast Food Worker", "Model", "Actor"};
-    std::string location[] = {"Tokyo, Japan", "Sapporo, Japan", "Yokohama, Japan", "Akita, Japan", "Sendai, Japan", "Nagoya, Japan", "Osaka, Japan", "Hiroshima, Japan", "Kitakyushu, Japan"};
+    std::string location[] = {"Tokyo, Japan", "Sapporo, Japan", "Yokohama, Japan", "Akita, Japan", "Sendai, Japan", "Nagoya, Japan", "Osaka, Japan", "Hiroshima, Japan", "Kitakyushu, Japan", "California, USA"};
+    std::string hobbies[] = {"Murder", "Watching VTubers", "Flirting", "Doing nothing", "Having existential crises", "Sky diving", "Climbing"};
 
     // size variables
 
@@ -34,6 +35,7 @@ int main () {
     int hLenth = sizeof(hairColour) / sizeof(hairColour[0]);
     int oLength = sizeof(occupation) / sizeof(occupation[0]);
     int lLength = sizeof(location) / sizeof(location[0]);
+    int hoLength = sizeof(hobbies) / sizeof(hobbies[0]); 
 
     // random generation variables
 
@@ -47,6 +49,7 @@ int main () {
     int nonBinaryNameRand = rand() % 1;
     int occupationRand = rand() % oLength;
     int livesRand = rand() % lLength;
+    int hobbiesRand = rand() % hoLength;
 
     // output variables
 
@@ -59,6 +62,7 @@ int main () {
     std::string h = hairColour[hairColourRand];
     std::string o = occupation[occupationRand];
     std::string l = location[livesRand];
+    std::string ho = hobbies[hobbiesRand];
 
     anime.open("anime.txt");
 
@@ -96,6 +100,8 @@ int main () {
     std::cout << "Occupation: " << o << "\n";
     anime << "Lives: " << l << "\n";
     std::cout << "Lives: " << l << "\n";
+    anime << "Hobby: " << ho;
+    std::cout << "Hobby: " << ho << "\n";
     anime.close();
     std::cin.get();
     return 0;
